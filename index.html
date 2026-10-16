@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vector Runner</title>
+  <link rel="stylesheet" href="./src/ui.css" />
+</head>
+<body>
+  <canvas id="view"></canvas>
+  <div id="loading"><div class="logo">VECTOR RUNNER</div><div class="sub">generating world…</div></div>
+  <div id="start" hidden>
+    <div class="logo">VECTOR RUNNER</div>
+    <div class="sub">a low-poly world at dusk</div>
+    <button id="go">Click to explore</button>
+    <div class="keys">
+      <span><b>WASD</b> move</span><span><b>Mouse</b> look</span><span><b>Shift</b> sprint</span>
+      <span><b>Space</b> jump · rise in a sinkhole</span><span><b>F</b> fly</span><span><b>R</b> ride the road</span>
+      <span><b>V</b> uni / colored</span><span><b>B</b> next uni color</span><span><b>1–9</b> places</span><span><b>H</b> hide panel</span><span><b>Touch</b> left side moves · right side looks · tap jumps</span>
+    </div>
+  </div>
+  <div id="hud">
+    <div id="where"></div>
+    <div id="speed"></div>
+  </div>
+  <div id="panel">
+    <div class="row title">VECTOR RUNNER</div>
+    <div class="row">
+      <span class="label">Style</span>
+      <button data-style="uni">Uni</button><button data-style="colored">Colored</button>
+    </div>
+    <div class="row" id="swatches"><span class="label">Hue</span></div>
+    <div class="row">
+      <span class="label">Mode</span>
+      <button data-mode="walk">Walk</button><button data-mode="fly">Fly</button><button data-mode="ride">Ride</button>
+    </div>
+    <div class="row">
+      <span class="label">Go to</span>
+      <select id="places"></select>
+    </div>
+    <div class="row"><span class="label">Glow</span><input id="glow" type="range" min="0" max="2.5" step="0.05" value="0.75" /></div>
+    <div class="row"><span class="label">Lines</span><input id="lines" type="range" min="0.5" max="3" step="0.05" value="1.25" /></div>
+    <div class="row"><span class="label">Mirror lake</span><input id="mirror" type="checkbox" checked /></div>
+    <div class="row hint">Click the view to look around · H hides this panel</div>
+  </div>
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>
